@@ -11,4 +11,8 @@ public class GoMultiplicativeExpressionImpl extends GoBinaryExpressionImpl
         super(node);
     }
 
+    @Override
+    public int precedence() {
+        return 5;
+    }
 }

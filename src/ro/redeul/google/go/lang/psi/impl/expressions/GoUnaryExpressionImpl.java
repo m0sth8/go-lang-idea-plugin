@@ -16,8 +16,8 @@ import ro.redeul.google.go.lang.stubs.GoNamesCache;
 
 import static ro.redeul.google.go.lang.psi.expressions.GoUnaryExpression.Op.Channel;
 
-public class GoUnaryExpressionImpl extends GoExpressionBase
-        implements GoUnaryExpression {
+public class GoUnaryExpressionImpl extends GoExpressionBase implements GoUnaryExpression {
+
     public GoUnaryExpressionImpl(@NotNull ASTNode node) {
         super(node);
     }

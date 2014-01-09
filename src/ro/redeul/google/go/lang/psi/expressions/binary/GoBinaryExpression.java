@@ -7,6 +7,8 @@ public interface GoBinaryExpression extends GoExpr {
 
     IElementType getOperator();
 
+    int precedence();
+
     GoExpr getLeftOperand();
 
     GoExpr getRightOperand();

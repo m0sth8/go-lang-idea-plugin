@@ -209,6 +209,22 @@ public interface GoElementTypes extends GoTokenTypes {
         SELECT_COMM_CLAUSE_SEND
     );
 
+    public final TokenSet OPS_LOG_OR = TokenSet.create(oCOND_OR);
+
+    public final TokenSet OPS_LOG_AND = TokenSet.create(oCOND_AND);
+
+    public final TokenSet OPS_REL = TokenSet.create(
+        oEQ, oNOT_EQ, oLESS, oLESS_OR_EQUAL, oGREATER, oGREATER_OR_EQUAL
+    );
+
+    public final TokenSet OPS_ADD = TokenSet.create(
+        oPLUS, oMINUS, oBIT_OR, oBIT_XOR
+    );
+
+    public final TokenSet OPS_MUL = TokenSet.create(
+        oMUL, oQUOTIENT, oREMAINDER, oSHIFT_LEFT, oSHIFT_RIGHT, oBIT_AND, oBIT_CLEAR
+    );
+
     public final TokenSet OPS_BINARY = TokenSet.create(
         oPLUS, oPLUS_ASSIGN, oMINUS, oMINUS_ASSIGN,
         oMUL, oMUL_ASSIGN, oQUOTIENT, oQUOTIENT_ASSIGN,
@@ -220,10 +236,6 @@ public interface GoElementTypes extends GoTokenTypes {
         oBIT_CLEAR, oBIT_CLEAR_ASSIGN,
 
         oCOND_AND, oCOND_OR
-    );
-
-    public final TokenSet OPS_RELATIONAL = TokenSet.create(
-        oEQ, oNOT_EQ, oLESS, oLESS_OR_EQUAL, oGREATER, oGREATER_OR_EQUAL
     );
 
     public final TokenSet FUNCTION_CALLS = TokenSet.create(

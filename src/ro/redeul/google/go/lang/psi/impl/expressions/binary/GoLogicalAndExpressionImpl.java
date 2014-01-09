@@ -22,5 +22,10 @@ public class GoLogicalAndExpressionImpl extends GoBinaryExpressionImpl
                         GoNamesCache.getInstance(getProject()))
         };
     }
+
+    @Override
+    public int precedence() {
+        return 2;
+    }
 }
 

@@ -9,8 +9,6 @@ import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ro.redeul.google.go.lang.lexer.GoTokenTypes;
-import ro.redeul.google.go.lang.parser.GoElementTypes;
 import ro.redeul.google.go.lang.psi.GoFile;
 import ro.redeul.google.go.lang.psi.GoPsiElement;
 import ro.redeul.google.go.lang.psi.declarations.GoConstDeclaration;
@@ -28,9 +26,7 @@ import ro.redeul.google.go.lang.psi.types.struct.GoTypeStructField;
 
 import java.util.Map;
 
-import static ro.redeul.google.go.formatter.blocks.GoBlockUtil.Alignments;
-import static ro.redeul.google.go.formatter.blocks.GoBlockUtil.CustomSpacings;
-import static ro.redeul.google.go.formatter.blocks.GoBlockUtil.Indents;
+import static ro.redeul.google.go.formatter.blocks.GoBlockUtil.*;
 import static ro.redeul.google.go.lang.parser.GoElementTypes.*;
 
 /**
@@ -299,12 +295,15 @@ public class GoBlocks {
                         .setNone(TYPES, pRPAREN)
                         .build());
 
+        if (psi instanceof GoBinaryExpression)
+            return new GoBinaryExpressionBlock((GoBinaryExpression) psi, settings, indent);
+
 //    if (psi instanceof GoShortVarDeclaration)
 //      return new GoShortVarDeclarationBlock((GoShortVarDeclaration)psi, settings, indent);
 
-        if (psi instanceof GoBinaryExpression) {
-            return new GoBinaryExpressionBlock(node, alignment, NO_WRAP, settings);
-        }
+//        if (psi instanceof GoBinaryExpression) {
+//            return new GoBinaryExpressionBlock(node, alignment, NO_WRAP, settings);
+//        }
 
 
         IElementType elementType = node.getElementType();
